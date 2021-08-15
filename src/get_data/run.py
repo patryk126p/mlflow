@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Download dataset
 """

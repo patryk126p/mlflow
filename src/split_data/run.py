@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Split dataset into train and test
 """

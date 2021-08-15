@@ -33,3 +33,8 @@ mlflow run .
 
 All necessary pipeline configuration options can be found in `config.yaml`.<br>
 Options specific to model are stored in `src/train_model/model_config.json`
+<br><br><br>
+
+
+####Helper script
+`download_artifact.py` is a helper script showing how artifacts can be downloaded
