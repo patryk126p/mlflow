@@ -1,0 +1,20 @@
+name: download_file
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      uri:
+        description: URI of file to download
+        type: string
+
+      file_name:
+        description: Name of the downloaded file
+        type: string
+
+      s3_path:
+        description: Destination in artifact store
+        type: string
+
+    command: "python run.py {uri} {file_name} {s3_path}"

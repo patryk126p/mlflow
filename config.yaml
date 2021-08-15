@@ -1,0 +1,8 @@
+main:
+  tracking_uri: "http://127.0.0.1:5000"
+  experiment_name: development
+  steps: download
+download:
+  uri: "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+  file_name: "iris.data"
+  s3_path: "raw_data"
