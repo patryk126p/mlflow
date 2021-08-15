@@ -1,0 +1,20 @@
+name: test
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      test_data:
+        description: Path to test dataset
+        type: string
+
+      target:
+        description: Name of target variable
+        type: string
+
+      model_path:
+        description: Path to model
+        type: string
+
+    command: "python run.py {test_data} {target} {model_path}"

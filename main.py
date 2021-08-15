@@ -8,6 +8,7 @@ _steps = [
     "clean",
     "split",
     "train",
+    "test",
 ]
 
 
@@ -65,6 +66,17 @@ def go(config: dict):
                 "model_config": config["train"]["model_config"],
                 "model_name": config["train"]["model_name"],
                 "s3_path": config["train"]["s3_path"],
+            },
+        )
+
+    if "test" in active_steps:
+        _ = mlflow.run(
+            os.path.join("src", "test_model"),
+            "main",
+            parameters={
+                "test_data": config["test"]["test_data"],
+                "target": config["test"]["target"],
+                "model_path": config["test"]["model_path"],
             },
         )
 
