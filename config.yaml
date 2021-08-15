@@ -11,3 +11,9 @@ clean:
   file_name: "iris.csv"
   col_names: "sepal_length,sepal_width,petal_length,petal_width,species"
   s3_path: "clean_data"
+split:
+  clean_data: "../clean_data/data/iris.csv"
+  test_size: 0.3
+  random_seed: 42
+  file_names: "iris_train.csv,iris_test.csv"
+  s3_path: "splitted_data"

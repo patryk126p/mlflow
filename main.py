@@ -6,6 +6,7 @@ import yaml
 _steps = [
     "download",
     "clean",
+    "split",
 ]
 
 
@@ -37,6 +38,19 @@ def go(config: dict):
                 "file_name": config["clean"]["file_name"],
                 "col_names": config["clean"]["col_names"],
                 "s3_path": config["clean"]["s3_path"],
+            },
+        )
+
+    if "split" in active_steps:
+        _ = mlflow.run(
+            os.path.join("src", "split_data"),
+            "main",
+            parameters={
+                "clean_data": config["split"]["clean_data"],
+                "test_size": config["split"]["test_size"],
+                "random_seed": config["split"]["random_seed"],
+                "file_names": config["split"]["file_names"],
+                "s3_path": config["split"]["s3_path"],
             },
         )
 

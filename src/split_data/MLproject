@@ -1,0 +1,28 @@
+name: split
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      clean_data:
+        description: Location of clean data to split
+        type: string
+
+      test_size:
+        description: Size of the test split. Fraction of the dataset, or number of items
+        type: string
+
+      random_seed:
+        description: Seed for the random number generator
+        type: string
+
+      file_names:
+        description: Comma separated list of names for train and test datasets
+        type: string
+
+      s3_path:
+        description: Destination in artifact store
+        type: string
+
+    command: "python run.py {clean_data} {test_size} {random_seed} {file_names} {s3_path}"
