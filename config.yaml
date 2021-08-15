@@ -17,3 +17,9 @@ split:
   random_seed: 42
   file_names: "iris_train.csv,iris_test.csv"
   s3_path: "splitted_data"
+train:
+  train_data: "../split_data/data/iris_train.csv"
+  target: "species"
+  model_config: "model_config.json"
+  model_name: "model.joblib"
+  s3_path: "model"
