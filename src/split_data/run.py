@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This script splits the provided dataframe in test and remainder
+Split dataset into train and test
 """
 import argparse
 import logging

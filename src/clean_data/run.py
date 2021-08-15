@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Download from W&B the raw dataset and apply some basic data clean_data, exporting the result to a new artifact
+Clean dataset
 """
 import argparse
 import logging

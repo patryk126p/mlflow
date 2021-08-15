@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This script download a URL to a local destination
+Download dataset
 """
 import argparse
 import logging
