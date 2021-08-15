@@ -5,24 +5,24 @@ main:
 download:
   uri: "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
   file_name: "iris.data"
-  s3_path: "raw_data"
+  s3_path: ""
 clean:
   raw_data: "../get_data/data/iris.data"
   file_name: "iris.csv"
   col_names: "sepal_length,sepal_width,petal_length,petal_width,species"
-  s3_path: "clean_data"
+  s3_path: ""
 split:
   clean_data: "../clean_data/data/iris.csv"
   test_size: 0.3
   random_seed: 42
   file_names: "iris_train.csv,iris_test.csv"
-  s3_path: "splitted_data"
+  s3_path: ""
 train:
   train_data: "../split_data/data/iris_train.csv"
   target: "species"
   model_config: "model_config.json"
   model_name: "model.joblib"
-  s3_path: "model"
+  s3_path: ""
 test:
   test_data: "../split_data/data/iris_test.csv"
   target: "species"
