@@ -5,6 +5,7 @@ import yaml
 
 _steps = [
     "download",
+    "clean",
 ]
 
 
@@ -24,6 +25,18 @@ def go(config: dict):
                 "uri": config["download"]["uri"],
                 "file_name": config["download"]["file_name"],
                 "s3_path": config["download"]["s3_path"],
+            },
+        )
+
+    if "clean" in active_steps:
+        _ = mlflow.run(
+            os.path.join("src", "clean_data"),
+            "main",
+            parameters={
+                "raw_data": config["clean"]["raw_data"],
+                "file_name": config["clean"]["file_name"],
+                "col_names": config["clean"]["col_names"],
+                "s3_path": config["clean"]["s3_path"],
             },
         )
 
